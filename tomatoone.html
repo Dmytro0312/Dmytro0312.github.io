@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width">
 </head>
 <body>
-	<div class="wrapper">
+	<div class="wrapper " id="app">
 		<header class="page1_header">
 			<div class="page1_header__container">
 				<div class="page1_header__content">
@@ -46,7 +46,7 @@
 				<div class="page2_center__content">
 					<div class="page2_center__block1">
 						<div class="page2_center__text1">Return to all tomatoes</div>
-						<div class="page2_center__text2">TAG 1002 (TAG 809) <span>Tomato Determinate Red Standard Round</span></div>
+						<div class="page2_center__text2" > <span>{{product.title}}</span><br>{{product.short_text}}</div>
 						<img src="images/Union.png" class="page2_center__union1">
 						<div class="page2_center__text3">Very high yield and excellent fruits quality!</div>
 						<div class="page2_center__text4">CHARACTERISTICS</div>
@@ -73,8 +73,11 @@
 						</div>
 					</div>
 					<div class="page2_center__block2">
-						<img src="images/page2_img2.jpg" class="page2_center__block2-img">
-						<div class="page2_center__download">Download PDF</div>
+						<img v-bind:src="product.image" class="page2_center__block2-img">
+						<div class="page2_center__download">
+						<a class="but_downoload"  @click.prevent="addToCart(product.id)" href="#" v-if="!btnVisible" > Add to cart</a>
+						<a class="but_downoload" href="contactas.html" v-if="btnVisible">Go to cart</a>
+					</div>
 						<div class="page2_center__text7">Cycle</div>
 						<div class="page2_center__list2">
 							<ul>
@@ -120,6 +123,8 @@
 							AGRIDERA SEEDS & AGRICULTURE LTD. © 2020
 					</div>
 				</footer>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+	<script src="js/main.js"></script>
 	</div>
 </body>
 </html>

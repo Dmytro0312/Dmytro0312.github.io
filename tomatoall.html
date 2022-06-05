@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width">
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper" id="app">
 		<header class="page1_header">
 			<div class="page1_header__container">
 				<div class="page1_header__content">
@@ -17,7 +17,7 @@
 					<div class="burger_block_2">
 							<img src="images/burger1_121003.png" class="burger_2">
 							<ul class="burger_block_ul1">
-									<a href="index.html"><li>Home</li></a>
+								<a href="index.html"><li>Home</li></a>
 								<li>Company Profile</li>
 								<li>Products</li>
 								<li>Services</li>
@@ -41,11 +41,11 @@
 				</div>
 			</div>
 		</header>
-		<div class="page1_center-top"></div>
+		<div class=" page1_center-top page1_center-top-fon2" ></div>
 		<div class="page1_center">
 			<div class="page1_center__container">
 				<div class="page1_center__content1">
-					<h2 class="page1_center__text-header">Agridera Fresh Market Tomato Hybrids</h2>
+					<h2 class="page1_center__text-header">{{text1}}</h2>
 					<img src="images/Union.png" class="page1_center__text-union">
 					<div class="page1_center__text-paragraph">
 						<p>Agridera aims to be one of the world's leading companies in the breeding, production, and marketing of tomato seeds. <span>We invest
@@ -109,45 +109,18 @@
 						Agridera operates through international and local distributers around the world. 
 					</div>
 				</div>
-			</div>
 			<div class="page1_center__block-img">
-			<div class="page1_center__block123-img">
-				<a href="tomatoone.html"><div class="page1_center__block1-img">
-					<h2>TAG 1000 (TAG 853)</h2>
-					<p>Tomato Determinate Red Standard Round</p>
-				</div></a>
-				<a href="tomatoone.html"><div class="page1_center__block2-img">
-					<h2>TAG 1001 (TAG 855)</h2>
-					<p>Tomato Determinate Red Standard Round</p>
-				</div></a>
-				<a href="tomatoone.html"><div class="page1_center__block3-img">
-					<h2>TAG 1002 (TAG 809)</h2>
-					<p>Tomato Determinate Red Standard Round</p>
-				</div></a>
-			</div>
-			<div class="page1_center__block456-img">
-				<a href="tomatoone.html"><div class="page1_center__block4-img">
-					<h2>TAG 1003 (TAG 834)</h2>
-					<p>Tomato Determinate Red Standard Round</p>
-				</div></a>
-				<a href="tomatoone.html"><div class="page1_center__block5-img">
-					<h2>TAG 1004 (TAG 848)</h2>
-					<p>Tomato Determinate Red BEEF Round</p>
-				</div></a>
-				<a href="tomatoone.html"><div class="page1_center__block6-img">
-					<h2>TAG 1005 (TAG 800)</h2>
-					<p>Tomato Determinate Red Standard Round</p>
-				</div></a>
-			</div>
-			<div class="page1_center__block78-img">
-				<a href="tomatoone.html"><div class="page1_center__block7-img">
-					<h2>TAG 1006 (TAG 898)</h2>
-					<p>Tomato Determinate Red Elongated</p>
-				</div></a>
-				<a href="tomatoone.html"><div class="page1_center__block8-img">
-					<h2>TAG 1007 (TAG 816) </h2>
-					<p>Tomato Determinate Red Elongated</p>
-				</div></a>
+						<div class="page1_center__block123-img">
+							<a :href="'tomatoone.html#'+item.id" v-if="products" v-for="item in products">
+							<div class="page1_center__block1-img">
+							<img v-bind:src="item.image" alt="" class=q31231223>
+							<h2>{{item.title}}</h2>
+							<p>{{item.short_text}}</p>
+							</div>
+							</a>
+						</div>
+						</div>
+						
 			</div>
 			</div>
 			<footer class="footer">
@@ -178,10 +151,11 @@
 					</div>
 				</div>
 					<div class="footer2">
-							AGRIDERA SEEDS & AGRICULTURE LTD. © 2020
+						AGRIDERA SEEDS & AGRICULTURE LTD. © 2020
 					</div>
 				</footer>
-		</div>
-</div/>
+</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
